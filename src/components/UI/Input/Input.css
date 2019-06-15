@@ -1,0 +1,12 @@
+.Inputs {
+    border: 3px solid rgb(31, 196, 31);
+    border-radius: 5px;
+    outline: none;
+    background-color: white;
+    padding: 6px 10px;
+}
+
+.Inputs:focus {
+    outline: none;
+    background-color: #ccc;
+}

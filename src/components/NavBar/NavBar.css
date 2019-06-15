@@ -1,0 +1,36 @@
+.NavBar {
+    background: rgb(23, 119, 197);
+    padding: 0.5rem;
+    width: 100%;
+}
+.LinksList {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.LinksList li {
+    list-style: none;
+    display: inline-block;
+    margin: 0.2rem 0.5rem;
+}
+
+.Authorization{
+   display: flex;
+   justify-content: flex-end;
+}
+
+.Avatar {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+}
+
+.Link{
+    text-decoration: none;
+    color: rgb(36, 211, 138);
+    font: 1.3rem bold Verdana, Geneva, Tahoma, sans-serif; 
+}
+.Link:hover{
+    text-decoration: none;
+    color: white
+}
