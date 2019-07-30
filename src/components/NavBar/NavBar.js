@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import * as actions from '../.././store/actions/index';
 import classes from './NavBar.css';
 
+import LangChange from '../LangChange/LangChange';
+
 
 const NavBar = (props) => {
     
@@ -17,12 +19,12 @@ const NavBar = (props) => {
         <div className={classes.Authorization}>
             <li>
                 <NavLink className={classes.Link} to='/signup'>
-                    SignUp
+                    {props.langChange.language.SignUp}
                 </NavLink>
             </li>
             <li>
                 <NavLink className={classes.Link} to='/login'>
-                    Login
+                    {props.langChange.language.Login}
                 </NavLink>
             </li>
         </div>
@@ -33,7 +35,7 @@ const NavBar = (props) => {
             <div className={classes.Authorization}>
                 <li>
                     <button onClick={logoutHandler} className={classes.Link}>
-                        Logout
+                        {props.langChange.language.LogOut}
                     </button>
                     <img className={classes.Avatar} src= {'http://localhost:5000/' + props.token.avatar} alt={props.token.name}/>
                 </li>
@@ -46,13 +48,16 @@ const NavBar = (props) => {
             <ul className={classes.LinksList}>
                 <div>
                     <li>
+                        <LangChange/>
+                    </li>
+                    <li>
                         <NavLink className={classes.Link} exact to='/'>
-                            Home
+                            {props.langChange.language.Home}
                         </NavLink>
                     </li>
                     <li>
                         <NavLink className={classes.Link} to="/profile">
-                            Profile
+                            {props.langChange.language.Profile}
                         </NavLink>
                     </li>
                 </div>
@@ -67,7 +72,8 @@ const NavBar = (props) => {
 const mapStateToProps = state => {
     return {
         isAuthenticated: state.auth.isAuthenticated,
-        token: state.auth.token
+        token: state.auth.token,
+        langChange: state.langChange
     };
 };
 

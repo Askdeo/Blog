@@ -2,3 +2,5 @@ import { loginSuccess } from './authActions';
 
 export  { signUp, login, logout, loginSuccess } from './authActions';
 export { getCurrentProfile, createCurrentProfile , clearProfile } from './profileActions'
+
+export { changeLang } from './changeLangActions';

@@ -70,7 +70,7 @@ const SignUp = (props) => {
                         type='text'
                         name='name'
                         value={formNameState}
-                        placeholder='Name'
+                        placeholder={props.langChange.language.name}
                         onChange={nameChangeHandler}
                      />
                 </div>
@@ -88,7 +88,7 @@ const SignUp = (props) => {
                     type='password'
                     name='password'
                     value={formPasswordState}
-                    placeholder='Password'
+                    placeholder={props.langChange.language.password}
                     onChange={passwordChangeHandler}
                 />
             </div>
@@ -97,18 +97,19 @@ const SignUp = (props) => {
                     type='password'
                     name='confirmedPassword'
                     value={formConfirmedPasswordState}
-                    placeholder='Confirm Password'
+                    placeholder={props.langChange.language.confirmPassword}
                     onChange={confirmedPasswordChangeHandler}
                 />
            </div>
-           <button className={classes.Submit} type='submit'>Submit</button>
+           <button className={classes.Submit} type='submit'>{props.langChange.language.submit}</button>
             </form>
         </div>
     )
 };
 const mapStateToProps = state => {
     return {
-        user: state.auth.user
+        user: state.auth.user,
+        langChange: state.langChange
     }
 }
 

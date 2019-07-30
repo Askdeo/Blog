@@ -10,10 +10,12 @@ import * as serviceWorker from './serviceWorker';
 
 import authReducer from './store/reducers/authReducer';
 import profileReducer from './store/reducers/profileReducer';
+import languageChangeReducer from './store/reducers/languageChangeReducer';
 
 const rootReducer = combineReducers({
     auth: authReducer,
-    profile: profileReducer
+    profile: profileReducer,
+    langChange: languageChangeReducer
 });
 
 const composeEnhancers = process.env.NODE_ENV === 'development'  ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose;

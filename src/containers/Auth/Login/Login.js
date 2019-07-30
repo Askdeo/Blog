@@ -60,11 +60,11 @@ const Login = (props) => {
                         type='password'
                         name='password'
                         value={formPasswordState}
-                        placeholder='Password'
+                        placeholder={props.langChange.language.password}
                         onChange={passwordChangeHandler}
                     />
                 </div>
-                <button className={classes.Submit} type='submit'>Submit</button>
+                <button className={classes.Submit} type='submit'>{props.langChange.language.submit}</button>
             </form>
         </div>
     )
@@ -72,7 +72,8 @@ const Login = (props) => {
 const mapStateToProps = state => {
     return {
         token: state.auth.token,
-        errors: state.auth.errors
+        errors: state.auth.errors,
+        langChange: state.langChange
     };
 };
 
